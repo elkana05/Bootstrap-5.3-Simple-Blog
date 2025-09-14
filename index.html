@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevBlog - Modern Web Development</title>
+    <!-- Bootstrap CSS (relative path for hosting compatibility) -->
+    <link href="assets/vendor/bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome for icons (CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <!-- Animate.css for animate__* classes (CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  </head>
+  <body class="bg-light">
+    <!-- Navigation with Bootstrap 5.3 utilities -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow">
+      <div class="container">
+        <a class="navbar-brand fw-bold fs-3" href="#" onclick="showSection('blog-list')">
+          <i class="fas fa-code me-2 text-warning"></i>DevBlog
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active fw-semibold px-3 rounded-pill" href="#" onclick="showSection('blog-list')">
+                <i class="fas fa-home me-2"></i>Blog
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold px-3 rounded-pill" href="#" onclick="showSection('about')">
+                <i class="fas fa-user me-2"></i>About
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section using only Bootstrap classes -->
+    <section class="bg-primary text-white py-5 mb-5">
+      <div class="container py-5">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-8">
+            <div class="card bg-dark bg-opacity-75 border-0 shadow-lg rounded-4">
+              <div class="card-body p-5">
+                <h1 class="display-4 fw-bold mb-4 text-warning">Selamat Datang di DevBlog!</h1>
+                <p class="lead fs-5 text-white-50 mb-5">
+                  Temukan inspirasi, tutorial, dan insight terbaru seputar pengembangan web modern. Jelajahi blog, pelajari teknologi, dan kenali pengembangnya!
+                </p>
+                <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+                  <a href="#blog-list" onclick="showSection('blog-list')" class="btn btn-warning btn-lg px-5 py-3 rounded-pill fw-semibold shadow">
+                    <i class="fas fa-rocket me-2"></i>Mulai Membaca
+                  </a>
+                  <a href="#" class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill fw-semibold" onclick="showSection('about')">
+                    <i class="fas fa-user-circle me-2"></i>Tentang Pengembang
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog List Section with Bootstrap utilities -->
+    <div id="blog-list" class="section container">
+      <div class="text-center mb-5">
+        <h1 class="fw-bold display-5 text-primary mb-3">Modern Web Development</h1>
+        <p class="lead text-muted col-lg-8 mx-auto">
+          Eksplorasi teknologi terdepan dalam pengembangan web modern dengan insights mendalam dan tutorial praktis
+        </p>
+
+        <!-- Search with Bootstrap input group -->
+        <div class="row justify-content-center mt-5">
+          <div class="col-lg-6">
+            <div class="input-group input-group-lg shadow-sm">
+              <span class="input-group-text bg-white border-end-0">
+                <i class="fas fa-search text-primary"></i>
+              </span>
+              <input type="text" class="form-control border-start-0 fs-6" placeholder="Cari artikel..." id="searchInput" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4" id="blogCards">
+        <!-- React Article Card -->
+        <div class="col-xl-4 col-md-6">
+          <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+            <div class="position-relative">
+              <img src="https://images.unsplash.com/photo-1517134191118-9d595e4c8c2b?w=500&h=300&fit=crop" class="card-img-top" alt="React Modern" style="height: 250px; object-fit: cover" />
+              <div class="position-absolute top-0 end-0 p-3">
+                <span class="badge bg-primary fs-6 px-3 py-2 rounded-pill">React</span>
+              </div>
+            </div>
+            <div class="card-body p-4 d-flex flex-column">
+              <div class="mb-3">
+                <span class="badge bg-primary me-2 px-3 py-2 rounded-pill">React</span>
+                <span class="badge bg-success px-3 py-2 rounded-pill">Frontend</span>
+              </div>
+              <h5 class="card-title fw-bold mb-3 lh-base">Membangun Aplikasi React Modern dengan Hooks</h5>
+              <p class="card-text text-muted flex-grow-1">
+                Pelajari cara membangun aplikasi React yang efisien menggunakan Hooks terbaru dan best practices untuk pengembangan modern.
+              </p>
+              <div class="d-flex justify-content-between align-items-center mt-auto pt-3">
+                <small class="text-muted fw-semibold">
+                  <i class="fas fa-clock me-2 text-primary"></i>5 min read
+                </small>
+                <button class="btn btn-primary px-4 py-2 rounded-pill fw-semibold shadow-sm" onclick="showBlogDetail('react-hooks')">
+                  Baca Artikel
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Node.js Article Card -->
+        <div class="col-xl-4 col-md-6">
+          <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+            <div class="position-relative">
+              <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&h=300&fit=crop" class="card-img-top" alt="Node.js Backend" style="height: 250px; object-fit: cover" />
+              <div class="position-absolute top-0 end-0 p-3">
+                <span class="badge bg-warning text-dark fs-6 px-3 py-2 rounded-pill">Node.js</span>
+              </div>
+            </div>
+            <div class="card-body p-4 d-flex flex-column">
+              <div class="mb-3">
+                <span class="badge bg-warning text-dark me-2 px-3 py-2 rounded-pill">Node.js</span>
+                <span class="badge bg-info px-3 py-2 rounded-pill">Backend</span>
+              </div>
+              <h5 class="card-title fw-bold mb-3 lh-base">Arsitektur Microservices dengan Node.js</h5>
+              <p class="card-text text-muted flex-grow-1">
+                Implementasi arsitektur microservices yang scalable menggunakan Node.js, Docker, dan teknologi cloud modern.
+              </p>
+              <div class="d-flex justify-content-between align-items-center mt-auto pt-3">
+                <small class="text-muted fw-semibold">
+                  <i class="fas fa-clock me-2 text-warning"></i>8 min read
+                </small>
+                <button class="btn btn-warning text-dark px-4 py-2 rounded-pill fw-semibold shadow-sm" onclick="showBlogDetail('nodejs-microservices')">
+                  Baca Artikel
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Design System Article Card -->
+        <div class="col-xl-4 col-md-6">
+          <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+            <div class="position-relative">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop" class="card-img-top" alt="UI UX Design" style="height: 250px; object-fit: cover" />
+              <div class="position-absolute top-0 end-0 p-3">
+                <span class="badge bg-danger fs-6 px-3 py-2 rounded-pill">Design</span>
+              </div>
+            </div>
+            <div class="card-body p-4 d-flex flex-column">
+              <div class="mb-3">
+                <span class="badge bg-danger me-2 px-3 py-2 rounded-pill">Design</span>
+                <span class="badge bg-secondary px-3 py-2 rounded-pill">UI/UX</span>
+              </div>
+              <h5 class="card-title fw-bold mb-3 lh-base">Prinsip Design System untuk Developer</h5>
+              <p class="card-text text-muted flex-grow-1">
+                Memahami dan mengimplementasikan design system yang konsisten untuk meningkatkan user experience dan development workflow.
+              </p>
+              <div class="d-flex justify-content-between align-items-center mt-auto pt-3">
+                <small class="text-muted fw-semibold">
+                  <i class="fas fa-clock me-2 text-danger"></i>6 min read
+                </small>
+                <button class="btn btn-danger px-4 py-2 rounded-pill fw-semibold shadow-sm" onclick="showBlogDetail('design-system')">
+                  Baca Artikel
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog Detail Section -->
+    <div id="blog-detail" class="section d-none container py-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <button class="btn btn-outline-primary mb-4 rounded-pill px-4 shadow-sm" onclick="showSection('blog-list')">
+            <i class="fas fa-arrow-left me-2"></i>Kembali ke Daftar Blog
+          </button>
+          <div class="card shadow-lg border-0 rounded-4">
+            <div class="card-body p-5" id="blog-content">
+              <!-- Blog content will be loaded here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Section with Bootstrap grid and utilities -->
+    <div id="about" class="section d-none container py-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="card shadow-lg border-0 rounded-4">
+            <div class="card-body p-5">
+              <!-- Profile Header -->
+              <div class="text-center mb-5">
+                <div class="position-relative d-inline-block mb-4">
+                  <img src="assets/poto elcuan.jpg" alt="Profile" class="rounded-circle shadow-lg" style="width: 150px; height: 150px; object-fit: cover" />
+                  <div class="position-absolute bottom-0 end-0 bg-success rounded-circle p-2 border border-3 border-white">
+                    <i class="fas fa-check text-white" style="font-size: 12px"></i>
+                  </div>
+                </div>
+                <h2 class="fw-bold text-primary mb-3">Elkana Sitorus</h2>
+                <p class="lead text-muted mb-4">Full Stack Developer & Technology Enthusiast</p>
+                <div class="row justify-content-center g-3 mb-4">
+                  <div class="col-auto">
+                    <span class="badge bg-primary fs-6 px-4 py-2 rounded-pill">
+                      <i class="fas fa-envelope me-2"></i>elkanasitorus5@gmail.com
+                    </span>
+                  </div>
+                  <div class="col-auto">
+                    <span class="badge bg-success fs-6 px-4 py-2 rounded-pill">
+                      <i class="fas fa-university me-2"></i>Institut Teknologi Del
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Skills Section -->
+              <h3 class="fw-bold text-center mb-5 text-primary">Technical Skills</h3>
+              <div class="row row-cols-1 row-cols-md-3 g-3 mb-4">
+                <div class="col">
+                  <div class="card h-100 text-center border-primary animate__animated animate__fadeInUp">
+                    <div class="card-body">
+                      <i class="fas fa-laptop-code fa-2x text-primary mb-2"></i>
+                      <h6 class="fw-bold mb-2">Frontend</h6>
+                      <p class="text-muted small mb-2">Membangun tampilan interaktif dan responsif untuk pengguna.</p>
+                      <span class="badge bg-primary mb-1">React.js</span>
+                      <span class="badge bg-info mb-1">Vue.js</span>
+                      <span class="badge bg-warning text-dark mb-1">TypeScript</span>
+                      <span class="badge bg-secondary mb-1">Tailwind CSS</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100 text-center border-success animate__animated animate__fadeInUp animate__delay-1s">
+                    <div class="card-body">
+                      <i class="fas fa-server fa-2x text-success mb-2"></i>
+                      <h6 class="fw-bold mb-2">Backend</h6>
+                      <p class="text-muted small mb-2">Mengelola data, logika bisnis, dan integrasi server.</p>
+                      <span class="badge bg-success mb-1">Node.js</span>
+                      <span class="badge bg-danger mb-1">Python</span>
+                      <span class="badge bg-dark mb-1">MongoDB</span>
+                      <span class="badge bg-secondary mb-1">PostgreSQL</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100 text-center border-warning animate__animated animate__fadeInUp animate__delay-2s">
+                    <div class="card-body">
+                      <i class="fas fa-tools fa-2x text-warning mb-2"></i>
+                      <h6 class="fw-bold mb-2">Tools & Learning</h6>
+                      <p class="text-muted small mb-2">Teknologi pendukung dan pembelajaran terbaru untuk pengembangan web.</p>
+                      <span class="badge bg-info mb-1">Docker</span>
+                      <span class="badge bg-warning text-dark mb-1">AWS</span>
+                      <span class="badge bg-dark mb-1">Git</span>
+                      <span class="badge bg-secondary mb-1">Figma</span>
+                      <span class="badge bg-primary mb-1">GraphQL</span>
+                      <span class="badge bg-info mb-1">Kubernetes</span>
+                      <span class="badge bg-success mb-1">Machine Learning</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Experience & Education -->
+              <div class="row g-4">
+                <div class="col-lg-6">
+                  <div class="card border-0 h-100 bg-primary bg-opacity-10 rounded-4">
+                    <div class="card-body p-4">
+                      <h5 class="fw-bold mb-4 text-primary">
+                        <i class="fas fa-briefcase me-3 bg-primary text-white p-2 rounded-circle"></i>Experience
+                      </h5>
+                      <div class="border-start border-primary border-3 ps-4">
+                        <div class="mb-4">
+                          <div class="d-flex flex-wrap align-items-center mb-2">
+                            <span class="badge bg-primary me-3 px-3 py-2 rounded-pill">2025 - Present</span>
+                            <h6 class="fw-bold mb-0">Senior Full Stack Developer</h6>
+                          </div>
+                          <p class="text-muted mb-2 fw-semibold">Warga Bantuin</p>
+                          <p class="small mb-0 text-muted">Leading development of enterprise web applications using modern tech stack.</p>
+                        </div>
+                        <div class="mb-3">
+                          <div class="d-flex flex-wrap align-items-center mb-2">
+                            <span class="badge bg-info me-3 px-3 py-2 rounded-pill">2024 - 2025</span>
+                            <h6 class="fw-bold mb-0">Frontend Developer</h6>
+                          </div>
+                          <p class="text-muted mb-2 fw-semibold">Simpin</p>
+                          <p class="small mb-0 text-muted">Developed responsive web applications and implemented UI/UX designs.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="card border-0 h-100 bg-success bg-opacity-10 rounded-4">
+                    <div class="card-body p-4">
+                      <h5 class="fw-bold mb-4 text-success">
+                        <i class="fas fa-graduation-cap me-3 bg-success text-white p-2 rounded-circle"></i>Education
+                      </h5>
+                      <div class="border-start border-success border-3 ps-4">
+                        <div class="mb-4">
+                          <div class="d-flex flex-wrap align-items-center mb-2">
+                            <span class="badge bg-success me-3 px-3 py-2 rounded-pill">2023 - 2027</span>
+                            <h6 class="fw-bold mb-0">S1 Informatika</h6>
+                          </div>
+                          <p class="text-muted mb-2 fw-semibold">Institut Teknologi Del</p>
+                          <p class="small mb-0 text-muted">Focus on Software Engineering and Web Development.</p>
+                        </div>
+                        <div class="mb-3">
+                          <div class="d-flex flex-wrap align-items-center mb-2">
+                            <span class="badge bg-warning text-dark me-3 px-3 py-2 rounded-pill">2025</span>
+                            <h6 class="fw-bold mb-0">IBM Certification</h6>
+                          </div>
+                          <p class="text-muted mb-2 fw-semibold">IBM</p>
+                          <p class="small mb-0 text-muted">Certified Code Generation and Optimization Using IBM Granite.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer with Bootstrap utilities -->
+    <footer class="bg-dark text-white py-5 mt-5">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-6">
+            <h4 class="fw-bold text-warning mb-3">
+              <i class="fas fa-code me-2"></i>DevBlog
+            </h4>
+            <p class="text-white-50 mb-4 lead">Sharing knowledge and insights about modern web development</p>
+            <div class="d-flex justify-content-center gap-3 mb-4">
+              <a href="#" class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px">
+                <i class="fab fa-github fs-5"></i>
+              </a>
+              <a href="#" class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px">
+                <i class="fab fa-linkedin fs-5"></i>
+              </a>
+              <a href="#" class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px">
+                <i class="fab fa-twitter fs-5"></i>
+              </a>
+            </div>
+            <p class="text-white-50 mb-0">
+              &copy; 2024 DevBlog. Made with <i class="fas fa-heart text-danger"></i> by Elkana Sitorus
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap Bundle JS (relative path for hosting compatibility) -->
+    <script src="assets/vendor/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Blog content data
+      const blogContents = {
+        "react-hooks": {
+          title: "Membangun Aplikasi React Modern dengan Hooks",
+          image: "https://images.unsplash.com/photo-1517134191118-9d595e4c8c2b?w=800&h=400&fit=crop",
+          date: "15 Januari 2024",
+          author: "Elkana Sitorus",
+          readTime: "5 min read",
+          tags: ["React", "Frontend", "JavaScript"],
+          content: `
+            <h2 class="text-primary fw-bold mb-4">Pengenalan React Hooks</h2>
+            <p class="lead mb-4">React Hooks telah merevolusi cara kita membangun komponen dalam React. Dengan Hooks, kita dapat menggunakan state dan lifecycle methods dalam functional components, membuat kode menjadi lebih clean dan mudah dipahami.</p>
+            
+            <div class="alert alert-info border-0 rounded-4 mb-4">
+              <h5 class="fw-bold mb-3"><i class="fas fa-lightbulb me-2 text-warning"></i>Key Benefits</h5>
+              <ul class="mb-0">
+                <li class="mb-2">Kode yang lebih sederhana dan readable</li>
+                <li class="mb-2">Reusabilitas logic yang lebih baik</li>
+                <li class="mb-2">Performa yang optimal</li>
+                <li>Testing yang lebih mudah</li>
+              </ul>
+            </div>
+            
+            <h3 class="text-primary fw-bold mt-5 mb-3">useState Hook</h3>
+            <p class="mb-4">useState adalah Hook yang paling dasar dan sering digunakan. Hook ini memungkinkan kita untuk menambahkan state ke functional component.</p>
+            
+            <div class="card bg-dark text-white mb-4 rounded-4">
+              <div class="card-body">
+                <code class="text-warning fs-6">const [count, setCount] = useState(0);</code>
+              </div>
+            </div>
+            
+            <h3 class="text-primary fw-bold mb-3">useEffect Hook</h3>
+            <p class="mb-4">useEffect digunakan untuk menangani side effects seperti API calls, subscriptions, atau manual DOM manipulation.</p>
+            
+            <h3 class="text-primary fw-bold mb-4">Best Practices</h3>
+            <div class="row g-4">
+              <div class="col-md-6">
+                <div class="card border-success border-2 rounded-4">
+                  <div class="card-body">
+                    <h6 class="text-success fw-bold mb-3">
+                      <i class="fas fa-check-circle me-2"></i>DO
+                    </h6>
+                    <ul class="mb-0">
+                      <li class="mb-2">Gunakan Hooks di top level</li>
+                      <li class="mb-2">Optimize dengan dependency array</li>
+                      <li>Buat custom hooks untuk logic complex</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card border-danger border-2 rounded-4">
+                  <div class="card-body">
+                    <h6 class="text-danger fw-bold mb-3">
+                      <i class="fas fa-times-circle me-2"></i>DON'T
+                    </h6>
+                    <ul class="mb-0">
+                      <li class="mb-2">Jangan gunakan dalam loops</li>
+                      <li class="mb-2">Jangan gunakan dalam conditions</li>
+                      <li>Jangan lupa dependency array</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `,
+        },
+        "nodejs-microservices": {
+          title: "Arsitektur Microservices dengan Node.js",
+          image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop",
+          date: "22 Januari 2024",
+          author: "Elkana Sitorus",
+          readTime: "8 min read",
+          tags: ["Node.js", "Backend", "Microservices"],
+          content: `
+            <h2 class="text-warning fw-bold mb-4">Pengenalan Microservices</h2>
+            <p class="lead mb-4">Microservices adalah pendekatan arsitektur di mana aplikasi dibangun sebagai kumpulan layanan kecil yang saling berkomunikasi. Node.js sangat cocok untuk membangun microservices karena sifatnya yang ringan dan scalable.</p>
+            
+            <h3 class="text-warning fw-bold mb-4">Keuntungan Microservices</h3>
+            <div class="row g-3 mb-5">
+              <div class="col-md-4">
+                <div class="card text-center border-primary border-2 rounded-4">
+                  <div class="card-body p-4">
+                    <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                      <i class="fas fa-expand-arrows-alt fa-2x text-primary"></i>
+                    </div>
+                    <h6 class="fw-bold text-primary mb-2">Scalability</h6>
+                    <p class="small mb-0">Scale komponen secara independen</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card text-center border-success border-2 rounded-4">
+                  <div class="card-body p-4">
+                    <div class="bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                      <i class="fas fa-rocket fa-2x text-success"></i>
+                    </div>
+                    <h6 class="fw-bold text-success mb-2">Deployment</h6>
+                    <p class="small mb-0">Deploy layanan secara terpisah</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card text-center border-info border-2 rounded-4">
+                  <div class="card-body p-4">
+                    <div class="bg-info bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                      <i class="fas fa-tools fa-2x text-info"></i>
+                    </div>
+                    <h6 class="fw-bold text-info mb-2">Maintenance</h6>
+                    <p class="small mb-0">Maintain kode lebih mudah</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <h3 class="text-warning fw-bold mb-4">Membangun Microservices dengan Node.js</h3>
+            <p class="mb-4">Dalam bagian ini, kita akan membahas langkah-langkah praktis untuk membangun microservices menggunakan Node.js dan Express.</p>
+            
+            <div class="card bg-dark text-white mb-4 rounded-4">
+              <div class="card-body">
+                <pre class="mb-0"><code class="text-warning fs-6">
+// Install dependencies
+npm install express mongoose cors dotenv
+
+// Sample server setup
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+require('dotenv').config();
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.log(err));
+
+app.get('/', (req, res) => {
+  res.send('Hello Microservices');
+});
+
+app.listen(process.env.PORT || 5000, () => {
+  console.log('Server is running');
+});
+                </code></pre>
+              </div>
+            </div>
+            
+            <h3 class="text-warning fw-bold mb-3">Best Practices</h3>
+            <div class="row g-4">
+              <div class="col-md-6">
+                <div class="card border-success border-2 rounded-4">
+                  <div class="card-body">
+                    <h6 class="text-success fw-bold mb-3">
+                      <i class="fas fa-check-circle me-2"></i>DO
+                    </h6>
+                    <ul class="mb-0">
+                      <li class="mb-2">Gunakan API versioning</li>
+                      <li class="mb-2">Implementasi rate limiting</li>
+                      <li class="mb-2">Monitor dan log setiap layanan</li>
+                      <li>Gunakan containerization (Docker)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card border-danger border-2 rounded-4">
+                  <div class="card-body">
+                    <h6 class="text-danger fw-bold mb-3">
+                      <i class="fas fa-times-circle me-2"></i>DON'T
+                    </h6>
+                    <ul class="mb-0">
+                      <li class="mb-2">Jangan hardcode konfigurasi</li>
+                      <li class="mb-2">Jangan abaikan keamanan</li>
+                      <li class="mb-2">Jangan gunakan database yang sama untuk semua layanan</li>
+                      <li>Jangan lupakan dokumentasi API</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `,
+        },
+        "design-system": {
+          title: "Prinsip Design System untuk Developer",
+          image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
+          date: "10 Februari 2024",
+          author: "Elkana Sitorus",
+          readTime: "6 min read",
+          tags: ["Design", "UI/UX", "Frontend"],
+          content: `
+            <h2 class="text-danger fw-bold mb-4">Pengenalan Design System</h2>
+            <p class="lead mb-4">Design system adalah kumpulan standar dan pedoman untuk desain dan pengembangan produk digital. Tujuannya adalah untuk menciptakan konsistensi, efisiensi, dan kolaborasi yang lebih baik antara tim desain dan pengembang.</p>
+            
+            <h3 class="text-danger fw-bold mb-4">Komponen Utama Design System</h3>
+            <div class="row g-3 mb-5">
+              <div class="col-md-4">
+                <div class="card text-center border-danger border-2 rounded-4">
+                  <div class="card-body p-4">
+                    <div class="bg-danger bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                      <i class="fas fa-paint-brush fa-2x text-danger"></i>
+                    </div>
+                    <h6 class="fw-bold text-danger mb-2">Design Tokens</h6>
+                    <p class="small mb-0">Warna, tipografi, spacing, dan elemen desain dasar lainnya.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card text-center border-danger border-2 rounded-4">
+                  <div class="card-body p-4">
+                    <div class="bg-danger bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                      <i class="fas fa-box-open fa-2x text-danger"></i>
+                    </div>
+                    <h6 class="fw-bold text-danger mb-2">UI Components</h6>
+                    <p class="small mb-0">Button, input, card, dan komponen antarmuka pengguna lainnya.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card text-center border-danger border-2 rounded-4">
+                  <div class="card-body p-4">
+                    <div class="bg-danger bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                      <i class="fas fa-cogs fa-2x text-danger"></i>
+                    </div>
+                    <h6 class="fw-bold text-danger mb-2">Development Tools</h6>
+                    <p class="small mb-0">Linting, formatting, dan alat bantu pengembangan lainnya.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <h3 class="text-danger fw-bold mb-4">Manfaat Design System</h3>
+            <ul class="list-unstyled mb-4">
+              <li class="mb-3">
+                <i class="fas fa-check-circle text-success me-2"></i>Konsistensi desain yang lebih baik di seluruh produk
+              </li>
+              <li class="mb-3">
+                <i class="fas fa-check-circle text-success me-2"></i>Proses pengembangan yang lebih efisien dan terstandarisasi
+              </li>
+              <li class="mb-3">
+                <i class="fas fa-check-circle text-success me-2"></i>Kolaborasi yang lebih baik antara tim desain dan pengembang
+              </li>
+              <li>
+                <i class="fas fa-check-circle text-success me-2"></i>Pemeliharaan dan pembaruan yang lebih mudah
+              </li>
+            </ul>
+            
+            <h3 class="text-danger fw-bold mb-3">Implementasi Design System</h3>
+            <p class="mb-4">Untuk mengimplementasikan design system, langkah pertama adalah mendefinisikan design tokens yang mencakup semua aspek dasar dari desain produk. Selanjutnya, bangunlah UI components yang dapat digunakan kembali di seluruh aplikasi. Terakhir, sediakan development tools yang mendukung penerapan dan pemeliharaan design system.</p>
+            
+            <div class="card bg-dark text-white mb-4 rounded-4">
+              <div class="card-body">
+                <pre class="mb-0"><code class="text-warning fs-6">
+// Contoh mendefinisikan design tokens
+const colors = {
+  primary: '#007bff',
+  secondary: '#6c757d',
+  success: '#28a745',
+  danger: '#dc3545',
+  warning: '#ffc107',
+  info: '#17a2b8',
+  light: '#f8f9fa',
+  dark: '#343a40'
+};
+
+// Contoh membuat komponen tombol
+import React from 'react';
+import { Button } from 'reactstrap';
+
+const MyButton = ({ label, onClick }) => {
+  return (
+    <Button color="primary" onClick={onClick}>
+      {label}
+    </Button>
+  );
+};
+
+export default MyButton;
+                </code></pre>
+              </div>
+            </div>
+          `,
+        },
+      };
+
+      // Function to show blog detail
+      function showBlogDetail(slug) {
+        const blog = blogContents[slug];
+        if (blog) {
+          document.getElementById("blog-content").innerHTML = `
+            <h1 class="fw-bold mb-4">${blog.title}</h1>
+            <div class="mb-4">
+              <img src="${blog.image}" alt="${blog.title}" class="img-fluid rounded-4 shadow-sm">
+            </div>
+            <p class="text-muted mb-4">
+              <i class="fas fa-calendar-alt me-2"></i>${blog.date} | 
+              <i class="fas fa-user me-2"></i>${blog.author} | 
+              <i class="fas fa-clock me-2"></i>${blog.readTime}
+            </p>
+            <div class="mb-4">
+              ${blog.content}
+            </div>
+          `;
+          showSection("blog-detail");
+        }
+      }
+
+      // Function to show section
+      function showSection(sectionId) {
+        const sections = ["blog-list", "blog-detail", "about"];
+        sections.forEach((id) => {
+          document.getElementById(id).classList.add("d-none");
+        });
+        document.getElementById(sectionId).classList.remove("d-none");
+
+        // Scroll to top smoothly
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
+
+      // Search functionality
+      document.getElementById("searchInput").addEventListener("input", function () {
+        const query = this.value.toLowerCase();
+        const cards = document.querySelectorAll("#blogCards .col-xl-4");
+        cards.forEach((card) => {
+          const title = card.querySelector(".card-title").textContent.toLowerCase();
+          if (title.includes(query)) {
+            card.closest(".col-xl-4").classList.remove("d-none");
+          } else {
+            card.closest(".col-xl-4").classList.add("d-none");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
