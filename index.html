@@ -690,18 +690,25 @@ export default MyButton;
         });
       }
 
-      // Search functionality
-      document.getElementById("searchInput").addEventListener("input", function () {
-        const query = this.value.toLowerCase();
-        const cards = document.querySelectorAll("#blogCards .col-xl-4");
-        cards.forEach((card) => {
-          const title = card.querySelector(".card-title").textContent.toLowerCase();
-          if (title.includes(query)) {
-            card.closest(".col-xl-4").classList.remove("d-none");
-          } else {
-            card.closest(".col-xl-4").classList.add("d-none");
-          }
-        });
+      // Wait for the DOM to be fully loaded before running scripts that interact with it
+      document.addEventListener("DOMContentLoaded", function () {
+        // Search functionality
+        const searchInput = document.getElementById("searchInput");
+        if (searchInput) {
+          searchInput.addEventListener("input", function () {
+            const query = this.value.toLowerCase();
+            const cards = document.querySelectorAll("#blogCards .col-xl-4");
+            cards.forEach((card) => {
+              const title = card.querySelector(".card-title").textContent.toLowerCase();
+              // Use card directly as it is the element we want to toggle
+              if (title.includes(query)) {
+                card.classList.remove("d-none");
+              } else {
+                card.classList.add("d-none");
+              }
+            });
+          });
+        }
       });
     </script>
   </body>
